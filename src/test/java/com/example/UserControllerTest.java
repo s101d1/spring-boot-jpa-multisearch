@@ -40,6 +40,6 @@ public class UserControllerTest {
         verify(userRepository).findAll(any(BooleanBuilder.class), any(Pageable.class));
 
         BooleanBuilder booleanBuilder = argumentCaptor.getValue();
-        assertEquals("lower(user.name) in [john, bob] || lower(user.name) like %doe", booleanBuilder.getValue().toString());
+        assertEquals("lower(user.name) in [john, bob] || lower(user.name) like %doe%", booleanBuilder.getValue().toString());
     }
 }
